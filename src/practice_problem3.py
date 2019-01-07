@@ -3,8 +3,8 @@ PRACTICE Exam 2, practice_problem 3.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Zach Kelly.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -173,7 +173,7 @@ def practice_problem3a(circles):
       :type sequence: [rg.Circle]
     """
     ###########################################################################
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -181,6 +181,10 @@ def practice_problem3a(circles):
     #    TIME ESTIMATE:   10 minutes.
     ###########################################################################
 
+    x_product = 1
+    for i in circles:
+        x_product = x_product * i.center.x
+    return x_product
 
 def run_test_practice_problem3b():
     """ Tests the    practice_problem3b    function. """
@@ -342,7 +346,7 @@ def practice_problem3b(sequence):
       :type: sequence: list    or tuple or string
     """
     ###########################################################################
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # IMPLEMENTATION REQUIREMENT:  You are NOT allowed to use the
@@ -355,6 +359,10 @@ def practice_problem3b(sequence):
     #    TIME ESTIMATE:   8 minutes.
     ###########################################################################
 
+    for i in range(len(sequence) - 1):
+        if sequence[i] == sequence[-1]:
+            return True
+    return False
 
 def run_test_practice_problem3c():
     """ Tests the    practice_problem3c    function. """
@@ -470,7 +478,7 @@ def practice_problem3c(sequence):
       :type: sequence: list    or tuple or string
     """
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -478,6 +486,11 @@ def practice_problem3c(sequence):
     #    TIME ESTIMATE:   8 minutes.
     ###########################################################################
 
+    indices = []
+    for i in range(len(sequence)):
+        if sequence[i] == 0:
+            indices = indices + [i]
+    return indices
 
 def run_test_practice_problem3d():
     """ Tests the    practice_problem3d    function. """
@@ -593,7 +606,7 @@ def practice_problem3d(sequence):
       :type: sequence: list    or tuple or string
     """
     ###########################################################################
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -601,8 +614,13 @@ def practice_problem3d(sequence):
     #    TIME ESTIMATE:   8 minutes for each part of this problem.
     ###########################################################################
 
+    '''for i in range(len(sequence)):
+        if sequence[i] == 0:
+            return i
+    return -1'''
+
     ###########################################################################
-    # TODO: 6. Just ABOVE this _TODO_, you should have implemented
+    # Done: 6. Just ABOVE this _TODO_, you should have implemented
     #     a solution for the   practice_problem3d   function.
     #     Here, put ANOTHER solution, as follows:
     #
@@ -616,6 +634,9 @@ def practice_problem3d(sequence):
     #
     #          This solution should *** HAVE NO LOOP (no FOR). ***
     ###########################################################################
+
+    seq = practice_problem3c(sequence) + [-1]
+    return seq[0]
 
 
 def run_test_practice_problem3e():
@@ -744,7 +765,7 @@ def practice_problem3e(sequence):
       :type sequence: list(float)    or tuple(float)
     """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # Done: 7. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -752,6 +773,10 @@ def practice_problem3e(sequence):
     #    TIME ESTIMATE:   8 minutes.
     ###########################################################################
 
+    even_sum = 0
+    for i in range(0, len(sequence), 2):
+        even_sum = even_sum + sequence[i]
+    return even_sum
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
